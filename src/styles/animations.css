@@ -20,16 +20,16 @@
 
 @keyframes blink {
     0% {
-        transform: translateY(0); /* A seta está na posição original */
-        opacity: 1; /* Totalmente visível */
+        transform: translateY(0); /* seta na posição original */
+        opacity: 1; /* começa visivel */
     }
     50% {
-        transform: translateY(-10px);  /* A seta sobe um pouco */
-        opacity: 0;  /* Torna a seta invisível */
+        transform: translateY(-10px);  /* a seta sobe um pouco */
+        opacity: 0;  /* torna a seta invisível */
     }
     100% {
-        transform: translateY(0);  /* A seta volta para sua posição original */
-        opacity: 1;  /* Torna a seta visível novamente */
+        transform: translateY(0);  /* a seta volta para sua posição original */
+        opacity: 1;  /* torna a seta visível dnv */
     }
 }
 
@@ -77,6 +77,8 @@
     transform: translateY(100%);
     animation: revealText 2s forwards;
 }
+
+/* nth child vai pegar cada elemento dentro de .studio-letra na ordem q ta la no jsx */
 
 .studio-letra:nth-child(1) {
     animation-delay: 0s;
@@ -152,7 +154,7 @@
 
 /* --- transiçao tema --- */
 
-/* Animação de fade-out */
+/* fade-out */
 @keyframes fade-out {
     0% {
     opacity: 1;
@@ -162,7 +164,7 @@
     }
 }
 
-  /* Animação de fade-in */
+  /* fade-in */
 @keyframes fade-in {
     0% {
     opacity: 0;
@@ -172,12 +174,12 @@
     }
 }
 
-  /* Classe para a animação de fade-out */
+  /* classe para o fade-out */
 .fade-out {
     animation: fade-out 0.5s ease-in-out forwards;
 }
 
-  /* Classe para a animação de fade-in */
+  /* classe para o fade-in */
 .fade-in {
     animation: fade-in 0.5s ease-in-out forwards;
 }

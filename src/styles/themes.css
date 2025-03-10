@@ -3,7 +3,8 @@
     --branco-puro: #FFFFFF;
     --preto: #333333;
     --cinza-escuro: #3b3b3b;
-    --cinza: #767676
+    --cinza: #767676;
+    --transicao: 0.5s ease-in-out
 }
 
 /*--*/
@@ -18,29 +19,29 @@
 }
 
 .vagalumes {
-    --vermelho-vagalumes: #894431;
-    --vermelho-escuro: #4C1E14;
-    --preto-vagalume: #110905;
-    --amarelo-fogo: #FEA619;
-    --laranja: #E27C17;
+    --vagalumes-vermelho: #912d2d;
+    --vagalumes-vermelho-escuro: #4C1E14;
+    --vagalumes-preto: #110905;
+    --vagalumes-amarelo-fogo: #FEA619;
+    --vagalumes-laranja: #E27C17;
 }
 
 .kaguya {
-    --rosa-claro: #FEBAD3;
-    --rosa-choque: #F476A8;
-    --ciano: #4B5868;
-    --chumbo: #5A6A7E;
-    --creme: #FFF5F4;
+    --kaguya-rosa-claro: #FEBAD3;
+    --kaguya-rosa-choque: #F476A8;
+    --kaguya-ciano: #4B5868;
+    --kaguya-chumbo: #5A6A7E;
+    --kaguya-creme: #FFF5F4;
     /*--branco: #f3f3f3;*/
 }
 
 .totoro {
-    --amarelo-totoro2: #EFE604;
-    --laranja-totoro2: #F7744F;
-    --verde-abacate-totoro2: #62782F;
-    --ebono-totoro2: #494D41;
-    --azul-ceu-totoro2: #90D0DA;
-    --verde-grama: #80AD35;
+    --totoro-amarelo: #EFE604;
+    --totoro-laranja: #F7744F;
+    --totoro-verde-abacate: #62782F;
+    --totoro-ebono: #494D41;
+    --totoro-azul-ceu: #90D0DA;
+    --totoro-verde-grama: #80AD35;
 }
 
 .teste{
@@ -74,50 +75,45 @@
 
 /* ---------- CHIHIRO ---------- */
 
-.chihiro *{
-    transition: 0.5s ease-in-out
-}
-
 body.chihiro{
     background-color: var(--branco);
-    transition: none !important;
 }
 
 /* ------ common.css ------ */
 
 .chihiro .paragrafo-texto{
     color: var(--cinza-escuro);
+    transition: var(--transicao);
 }
 
 .chihiro .link{
     color: var(--chihiro-verde);
+    transition: var(--transicao);
 }
 
 .chihiro .link:hover{
     color: var(--chihiro-verde-escuro);
+    transition: var(--transicao);
 }
 
 /* ------ globals.css ------ */
 
-.chihiro .titulo-sessao-destaque, .chihiro .subtitulo-sessao-destaque{
+.chihiro .titulo-sessao-destaque, .chihiro .subtitulo-sessao-destaque, .chihiro #studioghibli-logo, .chihiro #header-meio ul li a{
     color: var(--branco-puro);
+    transition: var(--transicao)
+}
+
+.chihiro #header-favorito, .chihiro #rect-hamburguer-menu, .chihiro #studioghibli-setinha{
+    fill: var(--branco-puro);
+    stroke: var(--branco-puro);
+    transition: var(--transicao);
 }
 
 .chihiro .titulo-topico{
     color: var(--preto);
 }
 
-/* --- header --- */
-
-.chihiro #studioghibli-logo{
-    color: var(--branco-puro);
-}
-
-.chihiro #header-meio ul li a{
-    color: var(--branco-puro);
-}
-
-.chihiro #header.scrolled{
+.chihiro #header.abaixado{
     background-color: var(--chihiro-azul); 
 }
 
@@ -137,62 +133,84 @@ body.chihiro{
     border-radius: 50px;
 }
 
-.chihiro
 
-.chihiro
 
-.chihiro
 
-.chihiro
-
-.chihiro
-
-.chihiro
-
-.chihiro
-
-.chihiro
-
-.chihiro
-
-.chihiro
-
-.chihiro
-
-.chihiro
 
 /* ---------- VAGALUMES ---------- */
 
 body.vagalumes{
-    background-color: var(--preto-vagalume);
+    background-color: var(--vagalumes-preto);
 }
+
+
 
 /* --- principal --- */
 
-.vagalumes #imagem-principal{
-    background-image: url('../../public/imgs/backgrounds/vagalumes.jpg');
+.vagalumes .titulo-sessao-destaque, .vagalumes .subtitulo-sessao-destaque, .vagalumes #studioghibli-logo, .vagalumes #header-meio ul li a{
+    color: var(--vagalumes-amarelo-fogo);
+    transition: var(--transicao);
 }
+
+.vagalumes #header-favorito, .vagalumes #rect-hamburguer-menu, .vagalumes #studioghibli-setinha{
+    fill: var(--vagalumes-amarelo-fogo);
+    stroke: var(--vagalumes-amarelo-fogo);
+    transition: var(--transicao);
+}
+
+.vagalumes #header.abaixado{
+    background-color: var(--vagalumes-vermelho-escuro); 
+}
+
+
+
 
 /* ---------- TOTORO ---------- */
 
 body.totoro{
-    background-color: var(--verde-abacate-totoro2);
+    background-color: var(--totoro-verde-abacate);
 }
 
 /* --- principal --- */
 
-.totoro #imagem-principal{
-    background-image: url('../../public/imgs/backgrounds/totoro.jpg');
+.totoro .titulo-sessao-destaque, .totoro .subtitulo-sessao-destaque, .totoro #studioghibli-logo, .totoro #header-meio ul li a{
+    color: var(--totoro-verde-grama);
+    transition: var(--transicao);
 }
+
+.totoro #header-favorito, .totoro #rect-hamburguer-menu, .totoro #studioghibli-setinha{
+    fill: var(--totoro-verde-grama);
+    stroke: var(--totoro-verde-grama);
+    transition: var(--transicao);
+}
+
+.totoro #header.abaixado{
+    background-color: var(--totoro-ebono); 
+}
+
+
 
 /* ---------- KAGUYA ---------- */
 
 body.kaguya{
-    background-color: var(--branco);
+    background-color: var(--kaguya-rosa-claro);
 }
+
+
 
 /* --- principal --- */
 
-.kaguya #imagem-principal{
-    background-image: url('../../public/imgs/backgrounds/kaguya.jpg');
+.kaguya .titulo-sessao-destaque, .kaguya .subtitulo-sessao-destaque, .kaguya #studioghibli-logo, .kaguya #header-meio ul li a{
+    color: var(--kaguya-rosa-choque);
+    transition: var(--transicao);
+}
+
+.kaguya #header-favorito, .kaguya #rect-hamburguer-menu, .kaguya #studioghibli-setinha{
+    fill: var(--kaguya-rosa-choque);
+    stroke: var(--kaguya-rosa-choque);
+    transition: var(--transicao);
+}
+
+.kaguya #header.abaixado{
+    background-color: var(--kaguya-creme); 
 }

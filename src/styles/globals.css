@@ -24,36 +24,36 @@ scroll-behavior: smooth;
 
 #header {
     width: 100%;
-    height: 130px; /* Definindo a altura do header */
+    height: 130px; 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
-    display: flex; /* Usando flexbox para facilitar o alinhamento */
-    justify-content: space-between; /* Centraliza horizontalmente */
-    align-items: center; /* Alinha os itens verticalmente */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
     background-color: transparent;
-    transition: background-color 0.5s ease, transform 0.3s ease, opacity 0.3s ease; /* Transição suave de cor e movimento */
+    transition: background-color 0.5s ease, transform 0.3s ease, opacity 0.3s ease; 
     animation: blink 1.5s ease-in-out; 
 }
 
-/* Efeito de encolhimento */
+/* efeito de encolhimento */
 #header.shrink {
-    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo quando encolher */
-    height: 80px; /* Encolhe o header */
-    padding: 10px 20px; /* Diminui o padding */
+    background-color: rgba(0, 0, 0, 0.7); 
+    height: 80px; 
+    padding: 10px 20px; 
 }
 
-/* Navegação */
+/* nav */
 #header-nav {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Espaça os itens na navegação */
+    justify-content: space-between; 
     align-items: center;
 }
 
-/* Logo */
+/* logo */
 #header-esquerdo {
     display: flex;
     justify-content: center;
@@ -78,10 +78,10 @@ scroll-behavior: smooth;
 }
 
 #header.shrink #studioghibli-logo {
-    font-size: 1.8em; /* Diminui o logo quando encolher */
+    font-size: 1.8em;
 }
 
-/* Navegação no centro */
+/* centro */
 #header-meio {
     display: flex;
     justify-content: center;
@@ -111,7 +111,7 @@ scroll-behavior: smooth;
     transform: scale(1.2);
 }
 
-/* Estilos para os botões de redes sociais */
+/* botões lado direito */
 #header-direita {
     display: flex;
     align-items: center;
@@ -127,7 +127,7 @@ scroll-behavior: smooth;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-#header-direita img {
+#header-favorito{
     width: 30px;
     height: 30px;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -137,79 +137,69 @@ scroll-behavior: smooth;
     transform: scale(1.2);
 }
 
-/* Efeito para esconder o header suavemente */
-.hidden {
-    transform: translateY(-100%); /* O header vai desaparecer para cima */
-    opacity: 0; /* Torna o header invisível */
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Suaviza o movimento e a opacidade */
+/* efeito para esconder o header */
+.escondido {
+    transform: translateY(-100%);
+    opacity: 0; 
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; 
 }
 
-/* Caso queira um movimento suave ao aparecer o header (ao rolar para cima) */
-#header:not(.hidden) {
-    transform: translateY(0); /* Quando o header aparecer, ele vai deslizar para sua posição */
-    opacity: 1; /* Garante que o header seja visível */
+#header:not(.escondido) {
+    transform: translateY(0); 
+    opacity: 1; 
 }
 
-/* Responsivo para telas menores (max-width: 768px) */
+
 @media (max-width: 768px) {
-    /* Ajusta a altura do header */
+    
     #header {
         height: 100px;
     }
 
-    /* Esconde a navegação central em telas pequenas */
+    /* esconde a navegação central pra responsividade */
     #header-meio {
-        display: none; /* Esconde a navegação */
+        display: none; 
     }
-
-
 
     /* Logo */
     #studioghibli-logo {
-        font-size: 1.8em; /* Diminui o tamanho do logo */
+        font-size: 1.8em;
     }
 
-    /* Redes sociais */
     #header-direita {
         margin-right: 10px;
     }
 
     #header-direita button {
-        margin: 0 5px; /* Menor margem para os botões */
+        margin: 0 5px;
     }
 
     #header-direita img {
         width: 25px;
-        height: 25px; /* Diminui os ícones das redes sociais */
+        height: 25px; 
     }
 }
 
-/* Responsivo para telas muito pequenas (max-width: 480px) */
 @media (max-width: 480px) {
-    /* Ajusta a altura do header */
+    
     #header {
         height: 80px;
     }
 
-    /* Navegação */
+    /* navegação */
     #header-meio ul li {
-        font-size: 12px; /* Diminui o tamanho da fonte */
+        font-size: 12px; 
     }
 
-    /* Ajuste no logo */
+    /* logo */
     #studioghibli-logo {
         font-size: 1.5em;
     }
 
     #header-meio ul li {
-        margin: 5px 0; /* Diminui o espaçamento entre os itens */
+        margin: 5px 0;
     }
 
-    /* Ajuste nos botões de redes sociais */
-    #header-direita img {
-        width: 20px;
-        height: 20px;
-    }
 }
 
 
@@ -224,15 +214,16 @@ scroll-behavior: smooth;
 #imagem-principal{
     width: 100%;
     height: 100vh;
-    background-size: cover;  /* Garante que a imagem cubra todo o espaço */
-    background-position: center top;
+    background-size: cover;  
+    background-position: center;
 }
 
 #imagem-principal-overlay{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 65%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 65%),
+                linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 20%);
     bottom: 0;
     display: flex;
     flex-direction: row;
@@ -278,36 +269,55 @@ scroll-behavior: smooth;
     
 
     #imagem-principal-overlay{
-        flex-direction: column; /* Garante que h1 e h2 fiquem um em cima do outro */
+        flex-direction: column;
         align-items: flex-start;
-        justify-content: flex-end; /* Centraliza os itens */
+        justify-content: flex-end; 
     }
 
     #studioghibli-h1 {
-        font-size: 3rem; /* Tamanho de fonte reduzido para telas menores */
+        font-size: 3rem; 
     }
 
     #studioghibli-h2 {
-        font-size: 1.2rem; /* Reduz o tamanho do subtítulo */
+        font-size: 1.2rem;
         margin-left: 8.5%;    
     }
 
     #studioghibli-proxima-sessao {
         position: absolute;
         right: 20px;
-        bottom: 10%; /* Mantém a seta na parte inferior e do lado direito */
+        bottom: 10%;
+    }
+
+    /* responsividade imagem-princiapl por temas*/
+
+    .vagalumes #imagem-principal{
+        background-size: cover;  
+        background-position: center ;
+        transition: var(--transicao);
+    }
+
+    .totoro #imagem-principal{
+        background-size: cover;  
+        background-position: 70% ;
+        transition: var(--transicao);
+    }
+
+    .kaguya #imagem-principal{
+        background-size: cover;  
+        background-position: 30% ;
+        transition: var(--transicao);
     }
 }
 
-/* Responsividade para telas muito pequenas (ex: celulares) */
 @media (max-width: 480px) {
 
     #studioghibli-h1 {
-        font-size: 2.5rem; /* Fonte ainda menor */
+        font-size: 2.5rem; 
     }
 
     #studioghibli-h2 {
-        font-size: 1rem; /* Subtítulo ainda menor */
+        font-size: 1rem;
     }
 }
 
@@ -362,24 +372,24 @@ scroll-behavior: smooth;
 .sessao-info-direita {
     width: 40%;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; 
+    align-items: center;
 }
 
 
 @media (max-width: 1024px) {
     .sessao-info {
-        flex-direction: column; /* Alinha os itens em coluna para telas pequenas */
-        margin-top: 30px; /* Ajusta o espaço superior */
+        flex-direction: column; 
+        margin-top: 30px;
     }
 
     .sessao-info-esquerda, .sessao-info-direita {
-        width: 100%; /* As duas seções ocuparão 100% da largura */
-        margin-left: 0; /* Remove o espaçamento da esquerda */
+        width: 100%; 
+        margin-left: 0;
     }
 
     .sessao-info-esquerda {
-        margin-bottom: 20px; /* Espaço entre as seções */
+        margin-bottom: 20px;
     }
     
     .titulo-topico{
@@ -398,15 +408,15 @@ scroll-behavior: smooth;
 
 @media (max-width: 480px) {
     .sessao-info {
-        margin-top: 20px; /* Ajusta o espaço superior */
+        margin-top: 20px; 
     }
 
     .sessao-info-esquerda {
-        margin-left: 0; /* Remove a margem */
+        margin-left: 0; 
     }
 
     .sessao-info-direita {
-        margin-top: 20px; /* Adiciona margem superior para a seção direita */
+        margin-top: 20px; 
     }
 }
 
@@ -414,7 +424,7 @@ scroll-behavior: smooth;
 .slider {
     position: relative;
     width: 100%;
-    max-width: 400px; /* Limita a largura do slider */
+    max-width: 400px;
     height: 300px;
     display: flex;
     align-items: center;
@@ -423,9 +433,9 @@ scroll-behavior: smooth;
 
 .slide-imagem {
     width: 100%;
-    max-width: 400px; /* Limita a largura da imagem */ /* Ajusta a altura automaticamente */
-    max-height: 450px; /* Limita a altura da imagem */
-    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+    max-width: 400px; 
+    max-height: 450px; 
+    object-fit: cover; 
     border-radius: 10px;
     transition: opacity 0.5s ease-in-out;
 }
@@ -440,11 +450,11 @@ scroll-behavior: smooth;
     position: absolute;
 }
 .botao-slider:first-of-type {
-    left: 10px; /* Coloca o primeiro botão à esquerda */
+    left: 10px; 
 }
 
 .botao-slider:last-of-type {
-    right: 10px; /* Coloca o segundo botão à direita */
+    right: 10px;
 }
 
 @media (max-width: 1024px) {

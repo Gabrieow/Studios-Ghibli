@@ -18,14 +18,14 @@ const Destaque = () => {
     const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
-        document.body.classList.add(temaAtual);  // Aplica o tema inicial
+        document.body.classList.add(temaAtual); 
     }, [temaAtual]);
 
-    // Função para aplicar o tema e trocar a imagem
+    // função pra aplicar o tema e trocar a imagem principal na sessão destaque
     const aplicarTema = () => {
 
+        // limitador pra nao bugar quando clicar muitas vezes no theme change
         if (isAnimating) return;
-
         setIsAnimating(true);
 
         const novoTema = temas[(temas.indexOf(temaAtual) + 1) % temas.length];
@@ -34,36 +34,31 @@ const Destaque = () => {
         document.body.classList.add(novoTema);
         setTemaAtual(novoTema);
         
-        // Adiciona a animação de fade-out à imagem atual
+        
         const imagem = document.getElementById('imagem-principal');
         imagem.classList.add('fade-out');
         
-        // Espera a animação de 1,5 segundos terminar antes de mudar a imagem
-        setTimeout(() => {
-            // Remove a animação de fade-out
+        // temporizador pra animaçao, 500ms pra começar o fadeout e 500ms pra começar o fadein, quando acabar o fade-in o setisaniamting vira false e o limitador do theme change some
+        setTimeout(() => {  
+            
             imagem.classList.remove('fade-out');
 
-            // Agora troca a imagem para a próxima
             const novaImagem = temas[(temas.indexOf(imagemAtual) + 1) % temas.length];
             setImagemAtual(novaImagem);
 
-            // Atualiza o fundo da imagem com a nova imagem
             imagem.style.backgroundImage = `url(${imagens[novaImagem]})`;
-
-            // Adiciona a animação de fade-in na nova imagem
             imagem.classList.add('fade-in');
 
-            // Remove a animação de fade-in após a animação ser concluída
             setTimeout(() => {
                 imagem.classList.remove('fade-in');
                 setIsAnimating(false);
-            }, 500); // O tempo da animação
-        }, 500);  // Tempo para a animação de fade-out
+            }, 500); 
+        }, 500); 
     };
 
     return (
         <div className="principal">
-            {/* Definindo a imagem de fundo baseada em imagemAtual */}
+            
             <div id="imagem-principal" style={{ backgroundImage: `url(${imagens[imagemAtual]})` }}></div>
             <div id='imagem-principal-overlay'>
                 <button id='theme-changer' onClick={aplicarTema}>
@@ -93,8 +88,8 @@ const Destaque = () => {
                 </h2>
                 <a href='#proxsessao' id='studioghibli-proxima-sessao'>
                     <svg className="setinha-ver-mais" id="studioghibli-setinha" width="40px" height="68px" viewBox="0 0 40 50">
-                        <path stroke="#ffffff" strokeWidth="2" fill="none" d="M 20 0 L 20 51"></path>
-                        <polyline stroke="#ffffff" strokeWidth="2" fill="none" points="12, 44 20, 52 28, 44"></polyline>
+                        <path strokeWidth="3" fill="none" d="M 20 0 L 20 51"></path>
+                        <polyline strokeWidth="3" fill="none" points="12, 44 20, 52 28, 44"></polyline>
                     </svg>
                 </a>
             </div>

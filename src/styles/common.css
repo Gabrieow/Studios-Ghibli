@@ -1,0 +1,43 @@
+@import url('themes.css');
+
+.titulo-sessao-destaque{
+    font-size: 5.5vw;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 3;
+    transform: scaleX(0.9);
+}
+
+.subtitulo-sessao-destaque{
+    font-size: 1.2vw;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.titulo-topico{
+    font-size: 1.4vw;
+    font-weight: 800;
+    line-height: 1.5;
+    
+}
+
+/* ------ paragrafos ------ */
+
+.paragrafo-texto{
+    font-size: 0.9vw;
+    line-height: 1.6;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.link{
+    text-decoration: none; /* Remove o sublinhado */ /* Mantém a cor do texto do elemento pai */
+    outline: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.link:hover{
+    transform: scale(1.2);
+
+}

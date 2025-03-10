@@ -1,0 +1,461 @@
+@import url('themes.css');
+@import url('common.css');
+@import url('animations.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: "Open Sans", Helvetica, sans-serif;
+
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+/* ------ HEADER ------ */
+
+#header {
+    width: 100%;
+    height: 130px; /* Definindo a altura do header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex; /* Usando flexbox para facilitar o alinhamento */
+    justify-content: space-between; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    background-color: transparent;
+    transition: background-color 0.5s ease, transform 0.3s ease, opacity 0.3s ease; /* Transição suave de cor e movimento */
+    animation: blink 1.5s ease-in-out; 
+}
+
+/* Efeito de encolhimento */
+#header.shrink {
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo quando encolher */
+    height: 80px; /* Encolhe o header */
+    padding: 10px 20px; /* Diminui o padding */
+}
+
+/* Navegação */
+#header-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaça os itens na navegação */
+    align-items: center;
+}
+
+/* Logo */
+#header-esquerdo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#studioghibli-logo {
+    font-size: 2.3em;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.1;
+    transform: scaleX(0.7);
+    margin-left: 30px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+    cursor: pointer;
+}
+
+#studioghibli-logo:hover{
+    transform: scaleX(0.2);
+    transform: scaleY(1.1);
+}
+
+#header.shrink #studioghibli-logo {
+    font-size: 1.8em; /* Diminui o logo quando encolher */
+}
+
+/* Navegação no centro */
+#header-meio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+}
+
+#header-meio ul {
+    display: flex;
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header-meio ul li {
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+#header-meio ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;  
+    cursor: pointer;
+}
+
+#header-meio ul li:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para os botões de redes sociais */
+#header-direita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5%;
+}
+
+#header-direita button {
+    background: none;
+    border: none;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#header-direita img {
+    width: 30px;
+    height: 30px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#header-favorito:hover {
+    transform: scale(1.2);
+}
+
+/* Efeito para esconder o header suavemente */
+.hidden {
+    transform: translateY(-100%); /* O header vai desaparecer para cima */
+    opacity: 0; /* Torna o header invisível */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Suaviza o movimento e a opacidade */
+}
+
+/* Caso queira um movimento suave ao aparecer o header (ao rolar para cima) */
+#header:not(.hidden) {
+    transform: translateY(0); /* Quando o header aparecer, ele vai deslizar para sua posição */
+    opacity: 1; /* Garante que o header seja visível */
+}
+
+/* Responsivo para telas menores (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Ajusta a altura do header */
+    #header {
+        height: 100px;
+    }
+
+    /* Esconde a navegação central em telas pequenas */
+    #header-meio {
+        display: none; /* Esconde a navegação */
+    }
+
+
+
+    /* Logo */
+    #studioghibli-logo {
+        font-size: 1.8em; /* Diminui o tamanho do logo */
+    }
+
+    /* Redes sociais */
+    #header-direita {
+        margin-right: 10px;
+    }
+
+    #header-direita button {
+        margin: 0 5px; /* Menor margem para os botões */
+    }
+
+    #header-direita img {
+        width: 25px;
+        height: 25px; /* Diminui os ícones das redes sociais */
+    }
+}
+
+/* Responsivo para telas muito pequenas (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Ajusta a altura do header */
+    #header {
+        height: 80px;
+    }
+
+    /* Navegação */
+    #header-meio ul li {
+        font-size: 12px; /* Diminui o tamanho da fonte */
+    }
+
+    /* Ajuste no logo */
+    #studioghibli-logo {
+        font-size: 1.5em;
+    }
+
+    #header-meio ul li {
+        margin: 5px 0; /* Diminui o espaçamento entre os itens */
+    }
+
+    /* Ajuste nos botões de redes sociais */
+    #header-direita img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+/* ------ SESSÃO DESTAQUE ------ */
+
+.principal{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#imagem-principal{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;  /* Garante que a imagem cubra todo o espaço */
+    background-position: center top;
+}
+
+#imagem-principal-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 65%);
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+#studioghibli-span{
+    display: flex;
+}
+
+#theme-changer {
+    all: unset;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 2.8%;
+    margin-left: 5%;
+}
+
+#theme-changer:hover {
+    transform: scale(1.2);
+}
+
+#studioghibli-h2{
+    margin-bottom: 3%;
+    margin-left: 30%;
+    animation: revealText 2s forwards;
+}
+
+#studioghibli-proxima-sessao{
+    margin-bottom: 3%;
+    position: absolute;
+    right: 6%;
+}
+
+@media (max-width: 768px) {
+
+    .principal {
+        background-position: center top;
+    }
+
+    
+
+    #imagem-principal-overlay{
+        flex-direction: column; /* Garante que h1 e h2 fiquem um em cima do outro */
+        align-items: flex-start;
+        justify-content: flex-end; /* Centraliza os itens */
+    }
+
+    #studioghibli-h1 {
+        font-size: 3rem; /* Tamanho de fonte reduzido para telas menores */
+    }
+
+    #studioghibli-h2 {
+        font-size: 1.2rem; /* Reduz o tamanho do subtítulo */
+        margin-left: 8.5%;    
+    }
+
+    #studioghibli-proxima-sessao {
+        position: absolute;
+        right: 20px;
+        bottom: 10%; /* Mantém a seta na parte inferior e do lado direito */
+    }
+}
+
+/* Responsividade para telas muito pequenas (ex: celulares) */
+@media (max-width: 480px) {
+
+    #studioghibli-h1 {
+        font-size: 2.5rem; /* Fonte ainda menor */
+    }
+
+    #studioghibli-h2 {
+        font-size: 1rem; /* Subtítulo ainda menor */
+    }
+}
+
+/* ------ SESSÃO SIGNIFICADO GHIBLI (Abaixo da destaque) ------ */
+
+.significadoGhibli{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    animation: revealText 2s forwards;
+}
+
+#significadoGhibli-h1{
+    font-size: 1.9vw;
+    text-align: center;
+
+}
+
+@media (max-width: 768px) {
+    .significadoGhibli{
+        width: 100%;
+        height: 300px;
+    }
+
+    #significadoGhibli-h1{
+        font-size: 1.4em;
+        margin: 20px;
+    }
+}
+
+/* ------ SESSÃO INFORMAÇÕES GHIBLI ------ */
+
+.sessao-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 60px;
+}
+
+.sessao-info-esquerda {
+    width: 60%;
+    margin-left: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+}
+
+.sessao-info-direita {
+    width: 40%;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+
+@media (max-width: 1024px) {
+    .sessao-info {
+        flex-direction: column; /* Alinha os itens em coluna para telas pequenas */
+        margin-top: 30px; /* Ajusta o espaço superior */
+    }
+
+    .sessao-info-esquerda, .sessao-info-direita {
+        width: 100%; /* As duas seções ocuparão 100% da largura */
+        margin-left: 0; /* Remove o espaçamento da esquerda */
+    }
+
+    .sessao-info-esquerda {
+        margin-bottom: 20px; /* Espaço entre as seções */
+    }
+    
+    .titulo-topico{
+        font-size: 1.4em;
+        margin-left: 25px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .paragrafo-texto{
+        font-size: 1em;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sessao-info {
+        margin-top: 20px; /* Ajusta o espaço superior */
+    }
+
+    .sessao-info-esquerda {
+        margin-left: 0; /* Remove a margem */
+    }
+
+    .sessao-info-direita {
+        margin-top: 20px; /* Adiciona margem superior para a seção direita */
+    }
+}
+
+/* --- slider --- */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Limita a largura do slider */
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-imagem {
+    width: 100%;
+    max-width: 400px; /* Limita a largura da imagem */ /* Ajusta a altura automaticamente */
+    max-height: 450px; /* Limita a altura da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.botao-slider {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+}
+.botao-slider:first-of-type {
+    left: 10px; /* Coloca o primeiro botão à esquerda */
+}
+
+.botao-slider:last-of-type {
+    right: 10px; /* Coloca o segundo botão à direita */
+}
+
+@media (max-width: 1024px) {
+    .slider{
+        margin-top: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .slider-imagem{
+        max-height: 350px
+    }
+}

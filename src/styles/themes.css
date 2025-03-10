@@ -1,0 +1,198 @@
+:root{
+    --branco: #f3f3f3;
+    --branco-puro: #FFFFFF;
+    --preto: #333333;
+    --cinza-escuro: #3b3b3b;
+    --cinza: #767676
+}
+
+/*--*/
+
+.chihiro {
+    --chihiro-azul-escuro: #0B305C;
+    --chihiro-azul-claro: #aacae0;
+    --chihiro-verde-escuro: #216862;
+    --chihiro-verde-persa: #30A094;
+    --chihiro-azul: #01628F;
+    --chihiro-verde: #53A253;
+}
+
+.vagalumes {
+    --vermelho-vagalumes: #894431;
+    --vermelho-escuro: #4C1E14;
+    --preto-vagalume: #110905;
+    --amarelo-fogo: #FEA619;
+    --laranja: #E27C17;
+}
+
+.kaguya {
+    --rosa-claro: #FEBAD3;
+    --rosa-choque: #F476A8;
+    --ciano: #4B5868;
+    --chumbo: #5A6A7E;
+    --creme: #FFF5F4;
+    /*--branco: #f3f3f3;*/
+}
+
+.totoro {
+    --amarelo-totoro2: #EFE604;
+    --laranja-totoro2: #F7744F;
+    --verde-abacate-totoro2: #62782F;
+    --ebono-totoro2: #494D41;
+    --azul-ceu-totoro2: #90D0DA;
+    --verde-grama: #80AD35;
+}
+
+.teste{
+    --woocommerce: #720eec;
+    --wc-green: #7ad03a;
+    --wc-red: #a00;
+    --wc-orange: #ffba00;
+    --wc-blue: #2ea2cc;
+    --wc-primary: #720eec;
+    --wc-primary-text: #fcfbfe;
+    --wc-secondary: #e9e6ed;
+    --wc-secondary-text: #515151;
+    --wc-highlight: #958e09;
+    --wc-highligh-text: white;
+    --wc-content-bg: #fff;
+    --wc-subtext: #767676;
+    --wc-form-border-color: rgba(32, 7, 7, 0.8);
+    --wc-form-border-radius: 4px;
+    --wc-form-border-width: 1px;
+    --mobile-container-width: 88%;
+    --nectar-accent-color: #3452ff;
+    --nectar-extra-color-1: #ff1053;
+    --nectar-extra-color-2: #2ed397;
+    --nectar-extra-color-3: #8224e3;
+    --nectar-bg-color: #ffffff;
+    --header-nav-height: 124px;
+    --nectar-border-thickness: 2px;
+    --nectar-starting-header-color: #ffffff;
+    --nectar-starting-dark-header-color: #000000;
+}
+
+/* ---------- CHIHIRO ---------- */
+
+.chihiro *{
+    transition: 0.5s ease-in-out
+}
+
+body.chihiro{
+    background-color: var(--branco);
+    transition: none !important;
+}
+
+/* ------ common.css ------ */
+
+.chihiro .paragrafo-texto{
+    color: var(--cinza-escuro);
+}
+
+.chihiro .link{
+    color: var(--chihiro-verde);
+}
+
+.chihiro .link:hover{
+    color: var(--chihiro-verde-escuro);
+}
+
+/* ------ globals.css ------ */
+
+.chihiro .titulo-sessao-destaque, .chihiro .subtitulo-sessao-destaque{
+    color: var(--branco-puro);
+}
+
+.chihiro .titulo-topico{
+    color: var(--preto);
+}
+
+/* --- header --- */
+
+.chihiro #studioghibli-logo{
+    color: var(--branco-puro);
+}
+
+.chihiro #header-meio ul li a{
+    color: var(--branco-puro);
+}
+
+.chihiro #header.scrolled{
+    background-color: var(--chihiro-azul); 
+}
+
+/* --- principal --- */
+
+
+/* --- sessao significado ghibli --- */
+
+.chihiro #significadoGhibli-h1{
+    color: var(--preto);
+}
+
+/* --- sessão info --- */
+
+.chihiro .sessao-info-esquerda{
+    background-color: var(--branco-puro);
+    border-radius: 50px;
+}
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+.chihiro
+
+/* ---------- VAGALUMES ---------- */
+
+body.vagalumes{
+    background-color: var(--preto-vagalume);
+}
+
+/* --- principal --- */
+
+.vagalumes #imagem-principal{
+    background-image: url('../../public/imgs/backgrounds/vagalumes.jpg');
+}
+
+/* ---------- TOTORO ---------- */
+
+body.totoro{
+    background-color: var(--verde-abacate-totoro2);
+}
+
+/* --- principal --- */
+
+.totoro #imagem-principal{
+    background-image: url('../../public/imgs/backgrounds/totoro.jpg');
+}
+
+/* ---------- KAGUYA ---------- */
+
+body.kaguya{
+    background-color: var(--branco);
+}
+
+/* --- principal --- */
+
+.kaguya #imagem-principal{
+    background-image: url('../../public/imgs/backgrounds/kaguya.jpg');
+}

@@ -20,6 +20,10 @@ html{
 scroll-behavior: smooth;
 }
 
+#div-mae{
+    display: flex;
+}
+
 /* ------ HEADER ------ */
 
 #header {
@@ -39,9 +43,9 @@ scroll-behavior: smooth;
 }
 
 /* efeito de encolhimento */
-#header.shrink {
-    background-color: rgba(0, 0, 0, 0.7); 
-    height: 80px; 
+#header.abaixado {
+
+    height: 100px; 
     padding: 10px 20px; 
 }
 
@@ -75,10 +79,6 @@ scroll-behavior: smooth;
 #studioghibli-logo:hover{
     transform: scaleX(0.2);
     transform: scaleY(1.1);
-}
-
-#header.shrink #studioghibli-logo {
-    font-size: 1.8em;
 }
 
 /* centro */
@@ -202,6 +202,61 @@ scroll-behavior: smooth;
 
 }
 
+/* ------ MENU OFF-SCREEN ------ */
+
+.menu-offscreen:not(.aberto){
+    display: none;
+}
+
+.menu-offscreen.aberto{
+    z-index: 100;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    margin-right: 10%;
+    align-items: center;
+    position: absolute;
+    transition: right 1s ease-out;
+}
+
+.menu-nav-opcoes ul{
+    list-style: none;
+    animation: fade-in 1s ease-in-out;
+}
+
+.menu-nav-opcoes li{
+    margin-bottom: 15px;
+}
+
+.menu-nav-opcoes ul li a{
+    text-decoration: none;
+    font-weight: bold;  
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.menu-nav-opcoes ul li a:hover{
+    transform: scale(1.2);
+}
+
+.fechar-menu{
+    all: unset;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: var(--branco);
+    margin-right: 95px;
+    transition: transform 1s ease-out, opacity 1s ease-out; 
+    animation: fade-in 1s ease-in-out;
+}
+
+.fechar-menu:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+
+}
 
 /* ------ SESSÃO DESTAQUE ------ */
 
@@ -258,6 +313,7 @@ scroll-behavior: smooth;
     margin-bottom: 3%;
     position: absolute;
     right: 6%;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -334,7 +390,7 @@ scroll-behavior: smooth;
 }
 
 #significadoGhibli-h1{
-    font-size: 1.9vw;
+    font-size: 2vw;
     text-align: center;
 
 }
@@ -361,21 +417,27 @@ scroll-behavior: smooth;
 }
 
 .sessao-info-esquerda {
-    width: 60%;
+    width: 50%;
     margin-left: 7%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 25px;
+    border-radius: 50px;
 }
 
 .sessao-info-direita {
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: center; 
     align-items: center;
 }
 
+#imagem-info-direita{
+    width: 800px;
+    height: 500px;
+    transition: 0.5s ease-in-out;
+}
 
 @media (max-width: 1024px) {
     .sessao-info {
@@ -469,3 +531,5 @@ scroll-behavior: smooth;
         max-height: 350px
     }
 }
+
+/* */

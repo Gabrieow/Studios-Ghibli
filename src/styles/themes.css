@@ -19,7 +19,7 @@
 }
 
 .vagalumes {
-    --vagalumes-vermelho: #912d2d;
+    --vagalumes-vermelho: #941919;
     --vagalumes-vermelho-escuro: #4C1E14;
     --vagalumes-preto: #110905;
     --vagalumes-amarelo-fogo: #FEA619;
@@ -37,9 +37,11 @@
 
 .totoro {
     --totoro-amarelo: #EFE604;
+    --totoro-amarelo-escuro: #d4cd00;
     --totoro-laranja: #F7744F;
     --totoro-verde-abacate: #62782F;
     --totoro-ebono: #494D41;
+    --totoro-verde: #435c1c;
     --totoro-azul-ceu: #90D0DA;
     --totoro-verde-grama: #80AD35;
 }
@@ -75,14 +77,22 @@
 
 /* ---------- CHIHIRO ---------- */
 
-body.chihiro{
+.chihiro #div-mae {
+    background: rgb(1,98,143);
+    background: linear-gradient(270deg, rgba(1,98,143,1) 0%, rgba(243,243,243,1) 100%);
+    transition: var(--transicao);
+}
+
+
+.chihiro #div-filha{
     background-color: var(--branco);
+    transition: var(--transicao);
 }
 
 /* ------ common.css ------ */
 
 .chihiro .paragrafo-texto{
-    color: var(--cinza-escuro);
+    color: var(--preto);
     transition: var(--transicao);
 }
 
@@ -100,7 +110,14 @@ body.chihiro{
 
 .chihiro .titulo-sessao-destaque, .chihiro .subtitulo-sessao-destaque, .chihiro #studioghibli-logo, .chihiro #header-meio ul li a{
     color: var(--branco-puro);
-    transition: var(--transicao)
+    transition: var(--transicao);
+}
+
+.chihiro #header-meio ul li a:hover, .chihiro #header-favorito:hover, .chihiro #rect-hamburguer-menu:hover, .chihiro #studioghibli-setinha:hover{
+    color: var(--chihiro-azul-claro);
+    fill: var(--chihiro-azul-claro);
+    stroke: var(--chihiro-azul-claro);
+    transition: var(--transicao);
 }
 
 .chihiro #header-favorito, .chihiro #rect-hamburguer-menu, .chihiro #studioghibli-setinha{
@@ -109,13 +126,23 @@ body.chihiro{
     transition: var(--transicao);
 }
 
+.chihiro #header.abaixado{
+    background-color: var(--chihiro-azul); 
+}
+
+.chihiro .menu-nav-opcoes ul li a{
+    color:var(--branco-puro)
+}
+
+.chihiro .menu-nav-opcoes ul li a:hover{
+    color: var(--chihiro-azul-escuro);
+}
+
 .chihiro .titulo-topico{
     color: var(--preto);
 }
 
-.chihiro #header.abaixado{
-    background-color: var(--chihiro-azul); 
-}
+
 
 /* --- principal --- */
 
@@ -128,9 +155,8 @@ body.chihiro{
 
 /* --- sessão info --- */
 
-.chihiro .sessao-info-esquerda{
-    background-color: var(--branco-puro);
-    border-radius: 50px;
+.chihiro #imagem-info-direita {
+    background-image: url('../../public/imgs/chihiro-icon.png');
 }
 
 
@@ -139,7 +165,13 @@ body.chihiro{
 
 /* ---------- VAGALUMES ---------- */
 
-body.vagalumes{
+.vagalumes #div-mae{
+    background: rgb(148,25,25);
+    background: linear-gradient(270deg, rgba(148,25,25,1) 0%, rgba(17,9,5,1) 100%);
+    transition: var(--transicao);
+}
+
+.vagalumes #div-filha{
     background-color: var(--vagalumes-preto);
 }
 
@@ -149,6 +181,15 @@ body.vagalumes{
 
 .vagalumes .titulo-sessao-destaque, .vagalumes .subtitulo-sessao-destaque, .vagalumes #studioghibli-logo, .vagalumes #header-meio ul li a{
     color: var(--vagalumes-amarelo-fogo);
+    transition: var(--transicao);
+
+
+}
+
+.vagalumes #header-meio ul li a:hover, .vagalumes #header-favorito:hover, .vagalumes #rect-hamburguer-menu:hover, .vagalumes #studioghibli-setinha:hover{
+    color: var(--vagalumes-laranja);
+    stroke: var(--vagalumes-laranja);
+    fill: var(--vagalumes-laranja);
     transition: var(--transicao);
 }
 
@@ -160,21 +201,76 @@ body.vagalumes{
 
 .vagalumes #header.abaixado{
     background-color: var(--vagalumes-vermelho-escuro); 
+    transition: var(--transicao);
 }
 
+.vagalumes .menu-nav-opcoes ul li a{
+    color:var(--vagalumes-laranja)
+}
+
+.vagalumes .menu-nav-opcoes ul li a:hover{
+    color: var(--vagalumes-vermelho-escuro);
+}
+
+/* --- */
 
 
+
+.vagalumes #significadoGhibli-h1{
+    color: var(--vagalumes-laranja);
+    transition: var(--transicao);
+}
+
+.vagalumes .titulo-topico{
+    color: var(--vagalumes-amarelo-fogo);
+    transition: var(--transicao);
+}
+
+.vagalumes .paragrafo-texto{
+    color: var(--vagalumes-laranja);
+    transition: var(--transicao);
+}
+
+.vagalumes .link{
+    color: var(--vagalumes-vermelho);
+    transition: var(--transicao);
+}
+
+.vagalumes .link:hover{
+    color: var(--vagalumes-vermelho-escuro);
+    transition: var(--transicao);
+}
+
+/* */
+
+.vagalumes #imagem-info-direita {
+    background-image: url('../../public/imgs/vagalumes-icon.png');
+}
 
 /* ---------- TOTORO ---------- */
 
-body.totoro{
+.totoro #div-mae{
+    background: rgb(98,120,47);
+    background: linear-gradient(270deg, rgba(98,120,47,1) 0%, rgba(73,77,65,1) 100%);
+    transition: var(--transicao);
+}
+
+.totoro #div-filha{
     background-color: var(--totoro-verde-abacate);
+    transition: var(--transicao);
 }
 
 /* --- principal --- */
 
 .totoro .titulo-sessao-destaque, .totoro .subtitulo-sessao-destaque, .totoro #studioghibli-logo, .totoro #header-meio ul li a{
     color: var(--totoro-verde-grama);
+    transition: var(--transicao);
+}
+
+.totoro #header-meio ul li a:hover, .totoro #header-favorito:hover, .totoro #rect-hamburguer-menu:hover, .totoro #studioghibli-setinha:hover{
+    color: var(--totoro-amarelo);
+    fill: var(--totoro-amarelo);
+    stroke: var(--totoro-amarelo);
     transition: var(--transicao);
 }
 
@@ -186,22 +282,76 @@ body.totoro{
 
 .totoro #header.abaixado{
     background-color: var(--totoro-ebono); 
+    transition: var(--transicao);
 }
 
+.totoro .menu-nav-opcoes ul li a{
+    color:var(--totoro-amarelo)
+}
+
+.totoro .menu-nav-opcoes ul li a:hover{
+    color: var(--totoro-ebono);
+}
+
+/* --- */
+
+
+.totoro #significadoGhibli-h1{
+    color: var(--totoro-amarelo-escuro);
+    transition: var(--transicao);
+}
+
+.totoro .titulo-topico{
+    color: var(--totoro-amarelo);
+    transition: var(--transicao);
+}
+
+.totoro .paragrafo-texto{
+    color: var(--totoro-amarelo);
+    transition: var(--transicao);
+}
+
+.totoro .link{
+    color: var(--totoro-laranja);
+    transition: var(--transicao);
+}
+
+.totoro .link:hover{
+    color: var(--totoro-ebono);
+    transition: var(--transicao);
+}
+
+/* */
+
+.totoro #imagem-info-direita{
+    background-image: url('../../public/imgs/totoro-icon.png');
+}
 
 
 /* ---------- KAGUYA ---------- */
 
-body.kaguya{
-    background-color: var(--kaguya-rosa-claro);
+.kaguya #div-mae{
+    background: rgb(255,245,244);
+    background: linear-gradient(270deg, rgba(255,245,244,1) 0%, rgba(254,186,211,1) 100%);
+    transition: var(--transicao);
 }
 
-
+.kaguya #div-filha{
+    background-color: var(--kaguya-rosa-claro);
+    transition: var(--transicao);
+}
 
 /* --- principal --- */
 
 .kaguya .titulo-sessao-destaque, .kaguya .subtitulo-sessao-destaque, .kaguya #studioghibli-logo, .kaguya #header-meio ul li a{
     color: var(--kaguya-rosa-choque);
+    transition: var(--transicao);
+}
+
+.kaguya #header-meio ul li a:hover, .kaguya #header-favorito:hover, .kaguya #rect-hamburguer-menu:hover, .kaguya #studioghibli-setinha:hover{
+    color: var(--kaguya-chumbo);
+    fill: var(--kaguya-chumbo);
+    stroke: var(--kaguya-chumbo);
     transition: var(--transicao);
 }
 
@@ -213,4 +363,47 @@ body.kaguya{
 
 .kaguya #header.abaixado{
     background-color: var(--kaguya-creme); 
+    transition: var(--transicao);
+}
+
+.kaguya .menu-nav-opcoes ul li a{
+    color:var(--kaguya-rosa-choque);
+}
+
+.kaguya .menu-nav-opcoes ul li a:hover{
+    color: var(--kaguya-chumbo);
+}
+
+/* --- */
+
+
+.kaguya #significadoGhibli-h1{
+    color: var(--kaguya-rosa-choque);
+    transition: var(--transicao);
+}
+
+.kaguya .titulo-topico{
+    color: var(--kaguya-chumbo);
+    transition: var(--transicao);
+}
+
+.kaguya .paragrafo-texto{
+    color: var(--kaguya-ciano);
+    transition: var(--transicao);
+}
+
+.kaguya .link{
+    color: var(--kaguya-creme);
+    transition: var(--transicao);
+}
+
+.kaguya .link:hover{
+    color: var(--kaguya-rosa-choque);
+    transition: var(--transicao);
+}
+
+/* */
+
+.kaguya #imagem-info-direita{
+    background-image: url('../../public/imgs/kaguya-icon.png');
 }

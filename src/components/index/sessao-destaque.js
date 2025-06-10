@@ -86,7 +86,7 @@ const Destaque = () => {
                     sediado em Koganei, Tóquio, em<br />
                     atividade desde 1985.
                 </h2>
-                <a href='#proxsessao' id='studioghibli-proxima-sessao'>
+                <a id='studioghibli-proxima-sessao' onClick={() => document.getElementById("sessao-significado").scrollIntoView({ behavior: "smooth" })}>
                     <svg className="setinha-ver-mais" id="studioghibli-setinha" width="40px" height="68px" viewBox="0 0 40 50">
                         <path strokeWidth="3" fill="none" d="M 20 0 L 20 51"></path>
                         <polyline strokeWidth="3" fill="none" points="12, 44 20, 52 28, 44"></polyline>

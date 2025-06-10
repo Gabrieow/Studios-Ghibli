@@ -40,8 +40,7 @@ const SessaoInfo = () => {
                 
             </div>
             <div className='sessao-info-direita'>
-                <SliderGhibli />
-                
+                <div id='imagem-info-direita'></div>
             </div>
         </div>
     )

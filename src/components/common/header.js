@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
+import MenuOffScreen from "./menuOffscreen";
 import '../../styles/globals.css';
 import '../../styles/common.css';
 import '../../styles/animations.css';
 import '../../styles/themes.css';
 
-const Header = () => {
+const Header = ({setAberto}) => {
     const [scrolled, setScrolled] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [headerClass, setHeaderClass] = useState("");
 
+    const handleMenu = () => {
+        setAberto(prev => !prev);
+        
+    };
 
     // script pra fazer o header encolher qnd rolar p baixo
     useEffect(() => {
@@ -26,7 +31,7 @@ const Header = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("abaixado", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
 
 
@@ -53,7 +58,7 @@ const Header = () => {
                                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                             </svg>
                         </button>
-                        <button id="hamburguer-menu">
+                        <button id="hamburguer-menu" onClick={handleMenu}>
                             <svg width="30" height="20" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" id="rect-hamburguer-menu">
                                 <rect id="rect1" x="0" y="0" width="50" height="5" rx="1" />
                                 <rect id="rect2" x="0" y="17" width="50" height="5" rx="1"/>
@@ -62,7 +67,12 @@ const Header = () => {
                         </button>
                     </div>
                 </nav>
+
+                <MenuOffScreen handleMenu={handleMenu} />
+
             </header>
+
+            
 
             
         </>
